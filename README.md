@@ -2,49 +2,38 @@
 
 ####  XSLT Helper ####
 
-Transform:
+Simple class for XSLT.
 
+##### Usage
+
+Transform:
 ``` php
 
   $xslX = new XslX;
 
-  $xml = new \DomDocument;
-  $xml->loadXML('<test>data</test>');
-
-  $xsl = new DomDocument;
-  $xsl->load(__DIR__ . '/file.xsl');
-
-  echo $xslX->transform($xsl, $xml);
-
+  echo $xslX->transform('xslFile.xsl', 'xmlFile.xml');
 ```
 
 Set Parameters:
-
 ``` php
 
   $xslX = new XslX;
 
-  $xml = new \DomDocument;
-  $xml->loadXML('<test>data</test>');
+  $xsl = new \DomDocument;
+  $xsl->load('xslFile.xsl');
 
-  $xsl = new DomDocument;
-  $xsl->load(__DIR__ . '/file.xsl');
-
-  $xsl->setParams([
-	"param" => 1,
-	"param2" => "pass to xsl"
-  ])
+  $xslX->setParams([
+	   "param" => 1,
+	   "param2" => "pass to xsl"
+  ]);
 
   $outputToFile = __DIR__ . '/transformationResult.html';
 
-  echo $xslX->transform($xml, $xsl, $outputToFile);
-
+  echo $xslX->transform($xsl, '<test>data</test>', $outputToFile);
 ```
 
-Call PHP Functions from within XSL:
-
+Call custom PHP functions from within XSL:
 ``` php
-
   $xslX = new XslX;
 
   $xml = new \DomDocument;
@@ -63,10 +52,9 @@ Call PHP Functions from within XSL:
 
 
   echo $xslX->transform($xml, $xsl, null, $params, $functionsFile);
-
 ```
-Use function within XSL stylesheet
 
+Use function within XSL stylesheet
 ``` xml
 
 <?xml version="1.0" encoding="UTF-8"?>
@@ -75,7 +63,4 @@ Use function within XSL stylesheet
   <xsl:output method="html" version="1.0" encoding="utf-8" omit-xml-declaration="yes" standalone="no" indent="no" doctype-public="html"/>
   <xsl:template match="/"><p><xsl:value-of select="php:function ('customFunction', $test-param)"/></p></xsl:template>
 </xsl:stylesheet>
-
 ```
-
-Include functions file to make available for calling from within Xsl
