@@ -1,4 +1,4 @@
-# XslX
+# XslZ
 ![!Scrutinizer](https://scrutinizer-ci.com/g/isaac-perkins/xslZ/badges/quality-score.png?b=master)
 ![Coverage](https://scrutinizer-ci.com/g/isaac-perkins/xslZ/badges/coverage.png?b=master)
 ![Build](https://scrutinizer-ci.com/g/isaac-perkins/xslZ/badges/build.png?b=master)
@@ -11,7 +11,7 @@ Simple helper class for XSLT.
 Transform:
 ``` php
 
-  $xslX = new XslX;
+  $xslX = new XslZ;
 
   echo $xslX->transform('xslFile.xsl', 'xmlFile.xml');
 ```
@@ -19,7 +19,7 @@ Transform:
 Set Parameters:
 ``` php
 
-  $xslX = new XslX;
+  $xslX = new XslZ;
 
   $xsl = new \DomDocument;
   $xsl->load('xslFile.xsl');
@@ -36,7 +36,7 @@ Set Parameters:
 
 Call custom PHP functions from within XSL:
 ``` php
-  $xslX = new XslX;
+  $xslX = new XslZ;
 
   $xml = new \DomDocument;
   $xml->loadXML('<test>data</test>');
