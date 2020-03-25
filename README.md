@@ -1,6 +1,6 @@
 # XslX
 
-Simple class for XSLT.
+Simple helper class for XSLT.
 
 ##### Usage
 
