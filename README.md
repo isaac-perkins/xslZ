@@ -6,9 +6,9 @@
 
 Simple helper class for XSLT.
 
-##### Usage
+#### Usage
 
-Transform:
+##### Transform:
 ``` php
 
   $xslX = new XslZ;
@@ -16,7 +16,7 @@ Transform:
   echo $xslX->transform('xslFile.xsl', 'xmlFile.xml');
 ```
 
-Set Parameters:
+##### Set Parameters:
 ``` php
 
   $xslX = new XslZ;
@@ -34,7 +34,7 @@ Set Parameters:
   echo $xslX->transform($xsl, '<test>data</test>', $outputToFile);
 ```
 
-Call custom PHP functions from within XSL:
+##### Call custom PHP functions:
 ``` php
   $xslX = new XslZ;
 
@@ -55,7 +55,6 @@ Call custom PHP functions from within XSL:
 
   echo $xslX->transform($xsl, $xml, null, $params, $functionsFile);
 ```
-
 Use function within XSL stylesheet
 ``` xml
 <?xml version="1.0" encoding="UTF-8"?>
