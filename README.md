@@ -49,12 +49,11 @@ Call custom PHP functions from within XSL:
   $functionsFile = __DIR__ . '/functions.php';
 
 
-  echo $xslX->transform($xml, $xsl, null, $params, $functionsFile);
+  echo $xslX->transform($xsl, $xml, null, $params, $functionsFile);
 ```
 
 Use function within XSL stylesheet
 ``` xml
-
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:php="http://php.net/xsl" version="1.0">
   <xsl:param name="test-param"/>
