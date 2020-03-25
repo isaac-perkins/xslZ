@@ -1,4 +1,4 @@
-# XslZ
+# xslz
 ![!Scrutinizer](https://scrutinizer-ci.com/g/isaac-perkins/xslZ/badges/quality-score.png?b=master)
 ![Coverage](https://scrutinizer-ci.com/g/isaac-perkins/xslZ/badges/coverage.png?b=master)
 ![Build](https://scrutinizer-ci.com/g/isaac-perkins/xslZ/badges/build.png?b=master)
