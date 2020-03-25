@@ -80,7 +80,7 @@ class XslZ
      * Set transormation output file
      * @param  Path to php file containing functions to be available to xsl
     */
-    public function setOutputFile(Path $outputFile)
+    public function setOutputFile(String $outputFile)
     {
       $this->outputFile = $outputFile;
     }
@@ -110,7 +110,7 @@ class XslZ
       } else {
           $rv = $dom->loadXML($fileOrOject);
       }
-      return $dom;
+      return $rv;
     }
 
     /**
@@ -133,7 +133,7 @@ class XslZ
         $xslt->setSecurityPrefs(0);
         $xslt->importStylesheet($xsl);
 
-        if ($params || $this->params) {
+        if (isset($params) || $this->params) {
             $this->setXslParams($xslt, $params);
         };
 
