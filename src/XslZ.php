@@ -100,13 +100,11 @@ class XslZ
         $xslt->setSecurityPrefs(0);
         $xslt->importStylesheet($xsl);
 
-        if (!empty($params) || $this->params) {
-            $this->setXslParams($xslt, $params);
-        };
+        $this->setXslParams($xslt, $params);
 
         $this->setFunctionsInclude($functions);
         $xslt->registerPHPFunctions();
-    
+
         if (isset($outputFile))  {
             $rv = $xslt->transformToUri($xml, $outputFile);
         } else {
