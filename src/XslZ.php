@@ -69,14 +69,6 @@ class XslZ
     }
 
     /**
-     * Set transormation output file
-    */
-    public function setOutputFile(String $outputFile)
-    {
-      $this->outputFile = $outputFile;
-    }
-
-    /**
      * Get transformation output file
     */
     public function getOutputFile()
@@ -116,7 +108,7 @@ class XslZ
         $xslt->setSecurityPrefs(0);
         $xslt->importStylesheet($xsl);
 
-        if (isset($params) || $this->params) {
+        if (!empty($params) || $this->params) {
             $this->setXslParams($xslt, $params);
         };
 
