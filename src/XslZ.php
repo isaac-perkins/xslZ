@@ -17,7 +17,6 @@ class XslZ
 
     /**
     * Get set params
-    * @return array
     */
 
     public function getParams()
@@ -26,8 +25,7 @@ class XslZ
     }
 
     /**
-    * Set parameters array
-    * @param array $parameters
+      * Set parameters array
     */
     public function setParams(array $params)
     {
@@ -36,8 +34,6 @@ class XslZ
 
     /**
    *  Append a parameter
-   *  @param $key
-   *  @param $value
    */
     public function addParam($key, $value)
     {
@@ -46,8 +42,6 @@ class XslZ
 
     /**
      * Retrieve a parameter
-     * @param $key
-     * @return mixed
     */
     public function getParam($key)
     {
@@ -60,7 +54,6 @@ class XslZ
 
     /**
      * Set functions file
-     * @param String Path to php file containing functions to be available to xsl
     */
     public function setFunctions($functions)
     {
@@ -69,7 +62,6 @@ class XslZ
 
     /**
      * Get function file
-     * @return Path to php file containing functions to be available to xsl
     */
     public function getFunctions()
     {
@@ -78,7 +70,6 @@ class XslZ
 
     /**
      * Set transormation output file
-     * @param  Path to php file containing functions to be available to xsl
     */
     public function setOutputFile(String $outputFile)
     {
@@ -87,7 +78,6 @@ class XslZ
 
     /**
      * Get transformation output file
-     * @return String Path to php file containing functions to be available to xsl
     */
     public function getOutputFile()
     {
@@ -96,7 +86,6 @@ class XslZ
 
     /**
      * Get DomDocument from path/string/object
-     * @return DomDocument
     */
     public function getDom($fileOrOject)
     {
@@ -115,13 +104,7 @@ class XslZ
 
     /**
      *   xsl transformation
-     *   @param $xsl path, string or object
-     *   @param $xml path, string or object
-     *   @param $outputFile  path/to/transformed/file
-     *   @param $params associative array of xsl parameters
-     *   @param $functons path/to/php/functions/called/in/xslt
-     *   @return mixed
-     */
+    */
     public function transform($xsl, $xml, $outputFile = null, $params = [], $functions = null)
     {
         $xsl = $this->getDom($xsl);
@@ -153,7 +136,6 @@ class XslZ
 
     /**
      * Set functions file to include
-     * @param Path to php file containing functions to be available to xsl
     */
     private function setFunctionsInclude(String $functions = null)
     {
@@ -168,8 +150,6 @@ class XslZ
 
     /**
      * Set xsl parameters
-     * @param XSLT Proccessor object
-     * @param parameters to pass to xsl
     */
     private function setXslParams($xslt, $params = [])
     {
@@ -180,5 +160,4 @@ class XslZ
             $xslt->setParameter('', $key, $value);
         }
     }
-
 }
