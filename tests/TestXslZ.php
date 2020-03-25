@@ -21,12 +21,9 @@ class TestXslZ extends TestCase {
   {
       $xslZ = new XslZ;
 
-      $dom = $xslZ->getDom(self::getTestXmlString());
+      $answer = '<this><is><a>test</a></is></this>';
 
-      $answer = '<?xml version="1.0"?>
-<this><is><a>test</a></is></this>
-';
-      $this->assertEquals($answer, $dom->saveXML());
+      $this->assertEquals($answer, self::getTestXmlString());
   }
 
   function testTransformFromDomObject()
@@ -47,7 +44,7 @@ class TestXslZ extends TestCase {
 <p>test</p>
 ';
 
-      $this->assertEquals($answer, $xslZ->transform(__DIR__ . '/inc/test.xsl', self::getXml()));
+      $this->assertEquals($answer, $xslZ->transform(__DIR__ . '/inc/test.xsl',  self::getXml()));
   }
 
   function testTransformFromString()
@@ -71,7 +68,7 @@ class TestXslZ extends TestCase {
 
     $output = __DIR__ . '/test-ouput.html';
 
-    $xslZ->transform(self::getXsl(), self::getTestXmlString(), $output, null, null);
+    $xslZ->transform(self::getXsl(), self::getTestXmlString(), $output, [], null);
 
     $this->assertEquals($answer, file_get_contents($output));
 
@@ -98,7 +95,7 @@ class TestXslZ extends TestCase {
       $params = ['test-param' => 'value'];
 
       $testParamXsl = __DIR__ . '/inc/test-params.xsl';
-      
+
       $this->assertEquals($answer, $xslZ->transform($testParamXsl, self::getXml(), null, $params));
 
       $xslZ->addParam('test-param', 'value');
