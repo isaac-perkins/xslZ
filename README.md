@@ -1,7 +1,5 @@
 # XslX
 
-####  XSLT Helper ####
-
 Simple class for XSLT.
 
 ##### Usage
