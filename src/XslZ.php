@@ -69,14 +69,6 @@ class XslZ
     }
 
     /**
-     * Get transformation output file
-    */
-    public function getOutputFile()
-    {
-      return $this->outputFile;
-    }
-
-    /**
      * Get DomDocument from path/string/object
     */
     public function getDom($fileOrOject)
@@ -112,11 +104,9 @@ class XslZ
             $this->setXslParams($xslt, $params);
         };
 
-        if($functions || isset($this->functions)) {
-            $this->setFunctionsInclude($functions);
-            $xslt->registerPHPFunctions();
-        }
-
+        $this->setFunctionsInclude($functions);
+        $xslt->registerPHPFunctions();
+    
         if (isset($outputFile))  {
             $rv = $xslt->transformToUri($xml, $outputFile);
         } else {
