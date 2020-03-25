@@ -71,19 +71,19 @@ class XslZ
     /**
      * Get DomDocument from path/string/object
     */
-    public function getDom($fileOrOject)
+    public function getDom($fileOrObject)
     {
-      if(is_object($fileOrOject)) {
-          return $fileOrOject;
+      if(is_object($fileOrObject)) {
+          return $fileOrObject;
       }
 
       $dom = new \DomDocument;
-      if(is_file($fileOrOject)) {
-          $rv = $dom->load($fileOrOject);
+      if(is_file($fileOrObject)) {
+          $dom->load($fileOrObject);
       } else {
-          $rv = $dom->loadXML($fileOrOject);
+          $dom->loadXML($fileOrObject);
       }
-      return $rv;
+      return $dom;
     }
 
     /**
@@ -102,8 +102,10 @@ class XslZ
 
         $this->setXslParams($xslt, $params);
 
-        $this->setFunctionsInclude($functions);
-        $xslt->registerPHPFunctions();
+        if ($functions || isset($this->functions)) {
+          $this->setFunctionsInclude($functions);
+          $xslt->registerPHPFunctions();
+        }
 
         if (isset($outputFile))  {
             $rv = $xslt->transformToUri($xml, $outputFile);
