@@ -4,7 +4,7 @@
 ![Build](https://scrutinizer-ci.com/g/isaac-perkins/xslZ/badges/build.png?b=master)
 ![License: MIT](https://img.shields.io/github/license/mashape/apistatus.svg)
 
-Simple helper class for XSLT.
+Simple helper for XSLT.
 
 #### Usage
 
