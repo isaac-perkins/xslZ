@@ -1,5 +1,17 @@
 {
     "name": "xslz/xslz",
+    "type": "library",
+    "description": "XSLT Helper",
+    "keywords": ["xsl","xslt", "xml", "transformation", "transform"],
+    "homepage": "https://github.com/isaac-perkins/xslZ",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Isaac Perkins",
+            "email": "isaac.perkins.1@gmail.com",
+            "role": "Developer"
+        }
+    ],
     "autoload": {
         "psr-4" : {
             "XslZ\\" : "src/"
