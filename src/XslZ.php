@@ -68,20 +68,21 @@ class XslZ
         return $this->functions;
     }
 
+
     /**
-     * Get DomDocument from path/string/object
+     * Fetch Document from path/string/object
     */
-    public function getDom($fileOrObject)
+    public function getDom($fileObjectString)
     {
-      if(is_object($fileOrObject)) {
-          return $fileOrObject;
+      if(is_object($fileObjectString)) {
+          return $fileObjectString;
       }
 
       $dom = new \DomDocument;
-      if(is_file($fileOrObject)) {
-          $dom->load($fileOrObject);
+      if(is_file($fileObjectString)) {
+          $dom->load($fileObjectString);
       } else {
-          $dom->loadXML($fileOrObject);
+          $dom->loadXML($fileObjectString);
       }
       return $dom;
     }

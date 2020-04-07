@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1585155092">
-  <project timestamp="1585155092">
+<coverage generated="1585155669">
+  <project timestamp="1585155669">
     <package name="XslZ">
       <file name="/var/www/sites/xslz/src/XslZ.php">
         <class name="XslZ\XslZ" namespace="XslZ">

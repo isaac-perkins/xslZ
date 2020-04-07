@@ -1,12 +1,14 @@
 <?php
 namespace XslZ\Tests;
 
+use PHPUnit\Framework\TestCase;
 use XslZ\XslZ;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use PHPUnit\Framework\TestCase;
-
+/**
+ * @covers XslZ
+ */
 class TestXslZ extends TestCase {
 
 
