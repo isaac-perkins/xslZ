@@ -78,12 +78,22 @@ class XslZ
           return $fileObjectString;
       }
 
+      set_error_handler(function($number, $error){
+          if (preg_match('/^DOMDocument::loadXML\(\): (.+)$/', $error, $m) === 1) {
+              throw new \Exception($m[1]);
+          }
+      });
+
       $dom = new \DomDocument;
+
       if(is_file($fileObjectString)) {
           $dom->load($fileObjectString);
       } else {
           $dom->loadXML($fileObjectString);
       }
+
+      restore_error_handler();
+
       return $dom;
     }
 
