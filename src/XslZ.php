@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * XslX
  * XSLT Helper
@@ -70,7 +70,7 @@ class XslZ
 
 
     /**
-     * Fetch Document from path/string/object
+     * Fetch Document from path/string/dom object
     */
     public function getDom($fileObjectString)
     {
@@ -107,7 +107,7 @@ class XslZ
 
         $xslt = new \XSLTProcessor;
 
-        ini_set("xsl.security_prefs", 0);
+        ini_set("xsl.security_prefs", '0');
         $xslt->setSecurityPrefs(0);
         $xslt->importStylesheet($xsl);
 
